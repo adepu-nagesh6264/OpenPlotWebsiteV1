@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite" preserve-order="true">
+<listeners>
+    <listener class-name="utilities.Reporting"/>
+</listeners>
+    <test name="Test Execution">
+        <!-- <parameter name="browser" value="chrome"/> -->
+
+        <classes>
+<!--            <class name="testCases.TC01LoginTest"/>-->
+<!--            <class name="testCases.TC03PostPropertyTest"/>-->
+<!--            <class name="testCases.TC02LogoutTest"/>-->
+            <class name="testCases.TC05HomePageRentalPropertiesTest"/>
+
+        </classes>
+    </test>
+
+</suite>
+

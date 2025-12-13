@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+
+    <!-- Report Theme -->
+    <configuration>
+        <theme>standard</theme>
+        <!-- Options: standard, dark -->
+
+        <!-- Report Title -->
+        <documentTitle>Automation Test Report</documentTitle>
+        <reportName>OpenPlotWebsite - Execution Report</reportName>
+
+        <!-- Encoding -->
+        <encoding>utf-8</encoding>
+
+        <!-- Protocol -->
+        <protocol>HTTPS</protocol>
+
+        <!-- Charts -->
+        <charts>
+            <enable>true</enable>
+            <dateFormat>dd-MM-yyyy HH:mm:ss</dateFormat>
+        </charts>
+
+        <!-- Time Stamp Format -->
+        <timeStampFormat>dd MMM yyyy, hh:mm:ss a</timeStampFormat>
+
+        <!-- Custom CSS -->
+        <css>
+            <![CDATA[
+				.navbar{ background-color:#0a3d62 !important; }
+				.card-panel{ border-radius:8px !important; }
+			]]>
+        </css>
+
+        <!-- Custom JS -->
+        <scripts>
+            <![CDATA[
+				console.log("Extent Report Loaded Successfully!");
+			]]>
+        </scripts>
+
+    </configuration>
+</extentreports>
