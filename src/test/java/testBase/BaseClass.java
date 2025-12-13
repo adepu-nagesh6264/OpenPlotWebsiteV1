@@ -27,7 +27,7 @@ public class BaseClass {
     @BeforeSuite
     public void setup() throws Exception {
 
-        // Load config properties
+        // Load config
         FileReader file = new FileReader("./src/test/resources/config.properties");
         p = new Properties();
         p.load(file);
@@ -38,20 +38,19 @@ public class BaseClass {
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
+        options.addArguments("--disable-notifications");
+        options.addArguments("--disable-extensions");
 
-        // Auto detect Jenkins
-        if (System.getenv("JENKINS_HOME") != null) {
-            System.out.println("Running in Jenkins → HEADLESS mode enabled");
-            options.addArguments("--headless=new");
-            options.addArguments("--window-size=1920,1080");
-        } else {
-            System.out.println("Running locally → launching full browser");
-            options.addArguments("--start-maximized");
-        }
+        // FORCE VISIBLE BROWSER (even in Jenkins)
+        options.addArguments("--start-maximized");
+
+        System.out.println("🚀 Launching VISIBLE Chrome browser");
 
         driver = new ChromeDriver(options);
+
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 
         driver.get(p.getProperty("URL"));
     }
@@ -59,15 +58,12 @@ public class BaseClass {
     @AfterSuite
     public void tearDown() {
         if (driver != null) {
-           // driver.quit();   // Recommended to close browser after test run
+            // driver.quit();
         }
     }
 
-    // -----------------------------
-    // 📸 Capture Screenshot Utility
-    // -----------------------------
+    // Screenshot utility
     public String captureScreenshot(WebDriver driver, String testName) {
-
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String destDir = System.getProperty("user.dir") + "/screenshots/";
         new File(destDir).mkdirs();
@@ -84,19 +80,13 @@ public class BaseClass {
         return "./screenshots/" + testName + "_" + timestamp + ".png";
     }
 
-    // -----------------------------
-    // 🪟 Window Handling Utility
-    // -----------------------------
-
-    // Store parent window before clicking a link
+    // Window utilities
     public void storeParentWindow() {
         parentWindowID = driver.getWindowHandle();
     }
 
-    // Switch to newly opened tab/window
     public void switchToChildWindow() {
         Set<String> allWindows = driver.getWindowHandles();
-
         for (String windowID : allWindows) {
             if (!windowID.equals(parentWindowID)) {
                 driver.switchTo().window(windowID);
@@ -105,18 +95,18 @@ public class BaseClass {
         }
     }
 
-    // Switch back to parent window
     public void switchToParentWindow() {
         driver.switchTo().window(parentWindowID);
     }
+
     public void closeCookiePopup() {
         try {
-            WebElement close = driver.findElement(By.xpath("//div[@class='cookies-modal-overlay']//button"));
+            WebElement close = driver.findElement(
+                    By.xpath("//div[@class='cookies-modal-overlay']//button"));
             close.click();
             Thread.sleep(1000);
         } catch (Exception e) {
             System.out.println("Cookie popup not displayed.");
         }
     }
-
 }
