@@ -21,7 +21,7 @@ public class TC09HomePagePopularCitiesTest extends BaseClass {
         HomePagePopularCities cities = new HomePagePopularCities(driver);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        // 🔥 Scroll until cards appear
+        // Scroll until cards appear
         cities.scrollToPopularCitiesSection();
         Thread.sleep(1000);
 

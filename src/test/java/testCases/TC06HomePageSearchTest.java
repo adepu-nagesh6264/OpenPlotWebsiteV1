@@ -25,7 +25,7 @@ public class TC06HomePageSearchTest extends BaseClass {
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        // ⭐ IMPORTANT: store parent window for correct switching
+        //  IMPORTANT: store parent window for correct switching
         storeParentWindow();
     }
 
@@ -59,7 +59,7 @@ public class TC06HomePageSearchTest extends BaseClass {
         System.out.println("Switching to child window...");
         switchToChildWindow();
 
-        // ⭐ better page load wait after switching
+        //  better page load wait after switching
         wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
 
         System.out.println("Child Window URL: " + driver.getCurrentUrl());
@@ -94,7 +94,7 @@ public class TC06HomePageSearchTest extends BaseClass {
         System.out.println("Switching to child window...");
         switchToChildWindow();
 
-        // ⭐ better page load wait after switching
+        //  better page load wait after switching
         wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
         System.out.println("Validating text on result page...");
         Assert.assertTrue(

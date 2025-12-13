@@ -71,7 +71,7 @@ public class TC03PostPropertyTest extends BaseClass {
 
         pp.clickSubmit();
 
-        // 🔥 Fix for slow modal loading
+        // Fix for slow modal loading
 //        wait.until(ExpectedConditions.elementToBeClickable(pp.selectImagesBtn));
 //        pp.clickOnSelectImagesBtn();
 //

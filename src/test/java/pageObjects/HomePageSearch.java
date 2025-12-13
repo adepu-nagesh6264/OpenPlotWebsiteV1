@@ -24,7 +24,7 @@ public class HomePageSearch extends BasePage {
     }
 
     // -------------------------------------------------------------------------
-    // 🔥 REUSABLE UTILITIES (Scroll + Safe Click + Retry + Wait)
+    // REUSABLE UTILITIES (Scroll + Safe Click + Retry + Wait)
     // -------------------------------------------------------------------------
 
     /** Scroll element into center */
@@ -260,22 +260,22 @@ public class HomePageSearch extends BasePage {
     }
 // Recently Added properties
 
-    // 📌 All Recently Added property cards
+    //  All Recently Added property cards
     @FindBy(css = ".recently-properties-card")
     private List<WebElement> recentlyAddedCards;
 
-    // 📌 Getter method
+    //  Getter method
     public List<WebElement> getRecentlyAddedCards() {
         return recentlyAddedCards;
     }
 
-    // 📌 Click specific card by index
+    //  Click specific card by index
     public void clickRecentlyAddedCard(int index) {
         wait.until(ExpectedConditions.visibilityOfAllElements(recentlyAddedCards));
         recentlyAddedCards.get(index).click();
     }
 
-    // 📌 Click all cards one-by-one (open in same window)
+    //  Click all cards one-by-one (open in same window)
     public void clickAllRecentlyAddedCards() {
         wait.until(ExpectedConditions.visibilityOfAllElements(recentlyAddedCards));
         for (WebElement card : recentlyAddedCards) {
@@ -284,13 +284,13 @@ public class HomePageSearch extends BasePage {
         }
     }
 
-    // 📌 Get all card titles
+    // Get all card titles
     public String getCardTitle(int index) {
         WebElement card = recentlyAddedCards.get(index);
         return card.findElement(By.cssSelector(".recently-properties-card-text h6.mb-1")).getText();
     }
 
-    // 📌 Get all card prices
+    //  Get all card prices
     public String getCardPrice(int index) {
         WebElement card = recentlyAddedCards.get(index);
         return card.findElement(By.cssSelector(".recently-properties-card-text h6.text-red")).getText();

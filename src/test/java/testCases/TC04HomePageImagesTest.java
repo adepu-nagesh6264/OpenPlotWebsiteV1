@@ -16,14 +16,14 @@ public class TC04HomePageImagesTest extends BaseClass {
         HomePage hp = new HomePage(driver);
         List<WebElement> images = hp.getAllImages();
 
-        System.out.println("🔥 Total Images Found: " + images.size());
+        System.out.println("Total Images Found: " + images.size());
 
         int index = 1;
 
         for (WebElement img : images) {
 
             System.out.println("\n==============================");
-            System.out.println("🔍 Checking Image #" + index);
+            System.out.println(" Checking Image #" + index);
             System.out.println("==============================");
 
             //hp.handlePopupQuick();
@@ -61,7 +61,7 @@ public class TC04HomePageImagesTest extends BaseClass {
             }
 
             if (!isLoaded) {
-                Assert.fail("❌ BROKEN IMAGE → " + html);
+                Assert.fail("BROKEN IMAGE → " + html);
             }
 
             // ALT TEXT

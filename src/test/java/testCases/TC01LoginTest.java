@@ -22,7 +22,7 @@ public class TC01LoginTest extends BaseClass {
         String uname = p.getProperty("username");
         String pwd = p.getProperty("password");
 
-        // 🔥 FIX 1: Handle Cookie Popup safely (works for Jenkins headless)
+        // FIX 1: Handle Cookie Popup safely (works for Jenkins headless)
         try {
             wait.until(ExpectedConditions.elementToBeClickable(hp.cookiesBtn));
             hp.clickOnCookiesBtn();
@@ -30,11 +30,11 @@ public class TC01LoginTest extends BaseClass {
             System.out.println("Cookies popup not displayed → continue");
         }
 
-        // 🔥 FIX 2: Click Login button using wait
+        // FIX 2: Click Login button using wait
         wait.until(ExpectedConditions.elementToBeClickable(hp.loginBtn));
         hp.clickOnLoginBtn();
 
-        // 🔥 FIX 3: Enter credentials
+        // FIX 3: Enter credentials
         wait.until(ExpectedConditions.visibilityOf(lp.userNameField));
         lp.setUserNameField(uname);
 
@@ -43,10 +43,10 @@ public class TC01LoginTest extends BaseClass {
 
         lp.clickOnLoginButton();
 
-        // 🔥 FIX 4: Explicit wait instead of Thread.sleep
+        // FIX 4: Explicit wait instead of Thread.sleep
         boolean status = hp.waitForProfileImage();
 
-        // 🔥 FIX 5: Assertion with screenshot support
+        // FIX 5: Assertion with screenshot support
         if (status) {
             captureScreenshot(driver, "LoginTest_Pass");
             Assert.assertTrue(status, "Login Successful");

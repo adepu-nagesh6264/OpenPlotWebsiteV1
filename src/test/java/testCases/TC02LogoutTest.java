@@ -22,19 +22,19 @@ public class TC02LogoutTest extends BaseClass {
         LogoutPage lg = new LogoutPage(driver);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-               // 🔥 Wait for navigation menu & click
+               // Wait for navigation menu & click
         wait.until(ExpectedConditions.elementToBeClickable(lg.navigationMenu));
         lg.clickOnNavigationMenu();
 
-        // 🔥 Wait for checkout / logout option
+        // Wait for checkout / logout option
         wait.until(ExpectedConditions.elementToBeClickable(lg.checkoutFromWebsite));
         lg.clickOnCheckoutFromWebsite();
 
-        // 🔥 Confirm logout alert
+        // Confirm logout alert
         wait.until(ExpectedConditions.elementToBeClickable(lg.logoutConfirmButton));
         lg.clickOnConfirmLogoutAlert();
 
-        // 🔥 Verify login button appears after logout
+        // Verify login button appears after logout
         wait.until(ExpectedConditions.visibilityOf(hp.loginBtn));
 
         Assert.assertTrue(hp.isLoginBtnDisplayed(), "Login button is not displayed → Logout failed");

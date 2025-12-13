@@ -25,5 +25,12 @@ dependencies {
 
 test {
     useTestNG()
+    systemProperty "file.encoding", "UTF-8"
 }
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+
+
 

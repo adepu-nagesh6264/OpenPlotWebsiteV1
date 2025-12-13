@@ -9,7 +9,7 @@ public class LoginPage extends BasePage {
 
     public LoginPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);   // 🔥 REQUIRED FIX
+        PageFactory.initElements(driver, this);   // REQUIRED FIX
     }
 
     @FindBy(xpath = "//input[@class='form-control agent_account_pge']")

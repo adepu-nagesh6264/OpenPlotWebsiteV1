@@ -12,15 +12,15 @@ public class LogoutPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    // 🔥 Correct navigation menu button
+    //  Correct navigation menu button
     @FindBy(xpath = "//button[contains(@class,'navbar-toggler')]")
     public WebElement navigationMenu;
 
-    // 🔥 Correct logout / checkout option
+    // Correct logout / checkout option
     @FindBy(xpath = "//*[contains(text(),'Check out') or contains(text(),'Logout')]")
     public WebElement checkoutFromWebsite;
 
-    // 🔥 Correct confirm logout button
+    // Correct confirm logout button
     @FindBy(xpath = "//div[@class='logout-confirm']")
     public WebElement logoutConfirmButton;
 

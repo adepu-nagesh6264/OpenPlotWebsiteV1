@@ -17,7 +17,7 @@ public class TC05HomePageRentalPropertiesTest extends BaseClass {
         String parent = driver.getWindowHandle();
 
         HomePageRentalPropertiesPage rp = new HomePageRentalPropertiesPage(driver);
-        // 🔥 FIX 1: Handle Cookie Popup safely (works for Jenkins headless)
+        // FIX 1: Handle Cookie Popup safely (works for Jenkins headless)
         try {
             wait.until(ExpectedConditions.elementToBeClickable(rp.cookiesBtn));
            rp.clickOnCookiesBtn();
