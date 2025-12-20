@@ -6,6 +6,8 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -61,8 +63,11 @@ public class BaseClass {
 
         driver = new ChromeDriver(options);
 
+
         // 🔥 FORCE maximize (this is critical)
         driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(1920, 1080));
+
 
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -113,5 +118,14 @@ public class BaseClass {
     public void switchToParentWindow() {
         driver.switchTo().window(parentWindowID);
     }
+    public void handleCookies() {
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(6))
+                    .until(ExpectedConditions.elementToBeClickable(
+                            By.xpath("//div[contains(@class,'accept-cookies-btn') and normalize-space()='Accept All Cookies']")
+                    )).click();
+        } catch (Exception ignored) {}
+    }
+
 
 }
