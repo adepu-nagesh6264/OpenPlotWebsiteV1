@@ -43,31 +43,31 @@ public class BaseClass {
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-extensions");
+        options.addArguments("--remote-allow-origins=*");
 
-        // 🔥 VERY IMPORTANT (Fix for taskbar issue)
+        // 🔥 Fix for Windows taskbar / occlusion issues
         options.addArguments("--disable-features=CalculateNativeWinOcclusion");
         options.addArguments("--force-device-scale-factor=1");
         options.addArguments("--window-position=0,0");
 
-        if (isJenkins || isHeadless) {
-            // 🔥 CI MODE
-            System.out.println("🧪 Running in CI mode → HEADLESS");
+        // ================= BROWSER MODE DECISION =================
+        if (isHeadless) {
+            // 🤖 Explicit Headless Mode
+            System.out.println("🤖 Running in HEADLESS mode");
             options.addArguments("--headless=new");
             options.addArguments("--window-size=1920,1080");
             options.addArguments("--disable-gpu");
+
         } else {
-            // 🧑‍💻 LOCAL MODE
-            System.out.println("🖥️ Running locally → VISIBLE BROWSER");
+            // 🖥️ Visible Browser (LOCAL or JENKINS USER MODE)
+            System.out.println("🖥️ Running with VISIBLE browser");
             options.addArguments("--start-maximized");
         }
 
         driver = new ChromeDriver(options);
 
-
-        // 🔥 FORCE maximize (this is critical)
-        driver.manage().window().maximize();
+        // 🔥 Force consistent size (critical for Jenkins)
         driver.manage().window().setSize(new Dimension(1920, 1080));
-
 
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -118,6 +118,7 @@ public class BaseClass {
     public void switchToParentWindow() {
         driver.switchTo().window(parentWindowID);
     }
+
     public void handleCookies() {
         try {
             new WebDriverWait(driver, Duration.ofSeconds(6))
@@ -126,6 +127,4 @@ public class BaseClass {
                     )).click();
         } catch (Exception ignored) {}
     }
-
-
 }
