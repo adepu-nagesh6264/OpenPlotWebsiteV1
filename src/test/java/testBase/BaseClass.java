@@ -35,11 +35,11 @@ public class BaseClass {
         logger = LogManager.getLogger(this.getClass());
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
+        options.addArguments("--start-maximized");
         options.addArguments("--disable-notifications");
+        options.addArguments("--disable-infobars");
         options.addArguments("--disable-extensions");
+
 
         // FORCE VISIBLE BROWSER (even in Jenkins)
         options.addArguments("--start-maximized");
