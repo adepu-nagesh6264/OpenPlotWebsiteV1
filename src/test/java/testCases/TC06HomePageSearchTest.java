@@ -1,6 +1,5 @@
 package testCases;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -19,13 +18,18 @@ public class TC06HomePageSearchTest extends BaseClass {
 
     @BeforeClass
     public void setup() {
-       closeCookiePopup();
+
         city = p.getProperty("searchcity");
+
+        // ✅ Initialize page object FIRST
         hps = new HomePageSearch(driver);
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        //  IMPORTANT: store parent window for correct switching
+        // ✅ Correct place to close cookie popup
+        hps.closeCookiePopup();
+
+        // ✅ Store parent window for switching
         storeParentWindow();
     }
 
@@ -59,12 +63,12 @@ public class TC06HomePageSearchTest extends BaseClass {
         System.out.println("Switching to child window...");
         switchToChildWindow();
 
-        //  better page load wait after switching
-        wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
+        wait.until(ExpectedConditions.jsReturnsValue(
+                "return document.readyState === 'complete'"
+        ));
 
         System.out.println("Child Window URL: " + driver.getCurrentUrl());
 
-        System.out.println("Validating text on result page...");
         Assert.assertTrue(
                 hps.validatePropertiesForBuyText(),
                 "Text 'Properties for BUY in' not found in new window!"
@@ -73,9 +77,7 @@ public class TC06HomePageSearchTest extends BaseClass {
         // Switch back
         System.out.println("Switching back to parent window...");
         switchToParentWindow();
-
-        wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
-        System.out.println("Returned to URL: " + driver.getCurrentUrl());
+        waitUntilPageLoads();
 
         System.out.println("Selecting Rent radio button...");
         hps.clickOnRentRadioButton();
@@ -87,6 +89,7 @@ public class TC06HomePageSearchTest extends BaseClass {
         hps.clickApartment();
         hps.clickIndustry();
         hps.clickOffice();
+
         System.out.println("Clicking on search button...");
         hps.clickOnSearchButton();
 
@@ -94,9 +97,10 @@ public class TC06HomePageSearchTest extends BaseClass {
         System.out.println("Switching to child window...");
         switchToChildWindow();
 
-        //  better page load wait after switching
-        wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
-        System.out.println("Validating text on result page...");
+        wait.until(ExpectedConditions.jsReturnsValue(
+                "return document.readyState === 'complete'"
+        ));
+
         Assert.assertTrue(
                 hps.validatePropertiesForBuyText(),
                 "Text 'Properties for RENT in' not found in new window!"
@@ -105,11 +109,12 @@ public class TC06HomePageSearchTest extends BaseClass {
         // Switch back
         System.out.println("Switching back to parent window...");
         switchToParentWindow();
-
     }
 
     // ----------- Utility Wait Method -------------
     public void waitUntilPageLoads() {
-        wait.until(ExpectedConditions.jsReturnsValue("return document.readyState=='complete'"));
+        wait.until(ExpectedConditions.jsReturnsValue(
+                "return document.readyState === 'complete'"
+        ));
     }
 }

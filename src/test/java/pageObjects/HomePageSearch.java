@@ -295,6 +295,18 @@ public class HomePageSearch extends BasePage {
         WebElement card = recentlyAddedCards.get(index);
         return card.findElement(By.cssSelector(".recently-properties-card-text h6.text-red")).getText();
     }
+    @FindBy(xpath = "//div[contains(@class,'accept-cookies-btn') and normalize-space()='Accept All Cookies']")
+    WebElement acceptCookiesBtn;
+    public void closeCookiePopup() {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(acceptCookiesBtn));
+            safeClick(acceptCookiesBtn);
+        } catch (Exception e) {
+            System.out.println("Cookie popup not displayed → continue");
+        }
+    }
+
+
 
 
 }

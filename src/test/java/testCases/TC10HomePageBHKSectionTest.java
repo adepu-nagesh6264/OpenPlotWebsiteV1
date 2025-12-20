@@ -4,15 +4,17 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.HomePageBHK;
+import pageObjects.HomePageSearch;
 import testBase.BaseClass;
 
 public class TC10HomePageBHKSectionTest extends BaseClass {
     HomePageBHK bhk;
+    HomePageSearch hps;
 
     @BeforeClass
     public void init() {
         bhk = new HomePageBHK(driver);
-       closeCookiePopup();
+        hps.closeCookiePopup();
     }
 
     @Test(priority = 1)
