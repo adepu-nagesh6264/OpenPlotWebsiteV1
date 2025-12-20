@@ -15,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
-import java.util.Set;
 
 public class BaseClass {
 
@@ -34,19 +33,36 @@ public class BaseClass {
 
         logger = LogManager.getLogger(this.getClass());
 
+        boolean isJenkins = System.getenv("JENKINS_HOME") != null;
+        boolean isHeadless = Boolean.parseBoolean(System.getProperty("HEADLESS", "false"));
+
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
+
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-extensions");
 
+        // 🔥 VERY IMPORTANT (Fix for taskbar issue)
+        options.addArguments("--disable-features=CalculateNativeWinOcclusion");
+        options.addArguments("--force-device-scale-factor=1");
+        options.addArguments("--window-position=0,0");
 
-        // FORCE VISIBLE BROWSER (even in Jenkins)
-        options.addArguments("--start-maximized");
-
-        System.out.println("🚀 Launching VISIBLE Chrome browser");
+        if (isJenkins || isHeadless) {
+            // 🔥 CI MODE
+            System.out.println("🧪 Running in CI mode → HEADLESS");
+            options.addArguments("--headless=new");
+            options.addArguments("--window-size=1920,1080");
+            options.addArguments("--disable-gpu");
+        } else {
+            // 🧑‍💻 LOCAL MODE
+            System.out.println("🖥️ Running locally → VISIBLE BROWSER");
+            options.addArguments("--start-maximized");
+        }
 
         driver = new ChromeDriver(options);
+
+        // 🔥 FORCE maximize (this is critical)
+        driver.manage().window().maximize();
 
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -58,11 +74,12 @@ public class BaseClass {
     @AfterSuite
     public void tearDown() {
         if (driver != null) {
-            // driver.quit();
+            driver.quit();
         }
     }
 
-    // Screenshot utility
+    // ================= Utilities =================
+
     public String captureScreenshot(WebDriver driver, String testName) {
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String destDir = System.getProperty("user.dir") + "/screenshots/";
@@ -77,17 +94,15 @@ public class BaseClass {
             System.out.println("Screenshot error: " + e.getMessage());
         }
 
-        return "./screenshots/" + testName + "_" + timestamp + ".png";
+        return destPath;
     }
 
-    // Window utilities
     public void storeParentWindow() {
         parentWindowID = driver.getWindowHandle();
     }
 
     public void switchToChildWindow() {
-        Set<String> allWindows = driver.getWindowHandles();
-        for (String windowID : allWindows) {
+        for (String windowID : driver.getWindowHandles()) {
             if (!windowID.equals(parentWindowID)) {
                 driver.switchTo().window(windowID);
                 break;
@@ -97,16 +112,5 @@ public class BaseClass {
 
     public void switchToParentWindow() {
         driver.switchTo().window(parentWindowID);
-    }
-
-    public void closeCookiePopup() {
-        try {
-            WebElement close = driver.findElement(
-                    By.xpath("//div[@class='cookies-modal-overlay']//button"));
-            close.click();
-            Thread.sleep(1000);
-        } catch (Exception e) {
-            System.out.println("Cookie popup not displayed.");
-        }
     }
 }
