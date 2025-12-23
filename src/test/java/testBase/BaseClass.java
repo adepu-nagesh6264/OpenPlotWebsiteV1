@@ -35,58 +35,72 @@ public class BaseClass {
 
         logger = LogManager.getLogger(BaseClass.class);
 
-        boolean isHeadless = Boolean.parseBoolean(System.getProperty("HEADLESS", "false"));
+        boolean isHeadless = Boolean.parseBoolean(
+                System.getProperty("HEADLESS", "false")
+        );
 
         ChromeOptions options = new ChromeOptions();
 
-        // ================= Mandatory stability options =================
+        // ================= Mandatory Stability Options =================
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-extensions");
+        options.addArguments("--disable-popup-blocking");
         options.addArguments("--remote-allow-origins=*");
 
-        // ================= STEP 1: CRITICAL VISIBILITY FIXES =================
+        // ================= Windows Visibility / Focus Fixes =================
         options.addArguments("--disable-features=CalculateNativeWinOcclusion");
         options.addArguments("--disable-backgrounding-occluded-windows");
         options.addArguments("--disable-renderer-backgrounding");
         options.addArguments("--force-device-scale-factor=1");
         options.addArguments("--window-position=0,0");
 
-        // ================= Browser mode =================
+        // ================= Browser Mode =================
         if (isHeadless) {
-            logger.info("🤖 Running in HEADLESS mode");
+            logger.info("🤖 Running in HEADLESS mode (CI)");
             options.addArguments("--headless=new");
             options.addArguments("--window-size=1920,1080");
             options.addArguments("--disable-gpu");
         } else {
             logger.info("🖥️ Running with VISIBLE browser");
+
+            // 🔥 Best option to avoid taskbar-only issue
+            // Comment this if you don't want app mode
+            options.addArguments("--app=" + p.getProperty("URL"));
+
             options.addArguments("--start-maximized");
         }
 
         driver = new ChromeDriver(options);
 
-        // ================= STEP 2: FORCE FOREGROUND WINDOW =================
-        driver.manage().window().setPosition(new Point(0, 0));
-        driver.manage().window().setSize(new Dimension(1920, 1080));
-        driver.manage().window().maximize();
+        // ================= Force Foreground (Best effort) =================
+        try {
+            driver.manage().window().setPosition(new Point(0, 0));
+            driver.manage().window().setSize(new Dimension(1920, 1080));
+            driver.manage().window().maximize();
 
-        ((JavascriptExecutor) driver).executeScript("window.focus();");
+            ((JavascriptExecutor) driver).executeScript("window.focus();");
+        } catch (Exception e) {
+            logger.warn("Window focus not allowed by OS (expected on Windows services)");
+        }
 
+        // ================= Global Browser Settings =================
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
 
         driver.get(p.getProperty("URL"));
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
             driver.quit();
+            logger.info("🛑 Browser closed");
         }
     }
 
-    // ================= Utilities =================
+    // ================= Screenshot Utility =================
 
     public String captureScreenshot(WebDriver driver, String testName) {
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -99,10 +113,12 @@ public class BaseClass {
             File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(src, new File(destPath));
         } catch (Exception e) {
-            logger.error("Screenshot error", e);
+            logger.error("Screenshot capture failed", e);
         }
         return destPath;
     }
+
+    // ================= Window Handling =================
 
     public void storeParentWindow() {
         parentWindowID = driver.getWindowHandle();
@@ -133,7 +149,7 @@ public class BaseClass {
             );
 
             WebElement acceptBtn =
-                    wait.until(ExpectedConditions.visibilityOfElementLocated(cookieBtn));
+                    wait.until(ExpectedConditions.elementToBeClickable(cookieBtn));
 
             ((JavascriptExecutor) driver)
                     .executeScript("arguments[0].scrollIntoView({block:'center'});", acceptBtn);
@@ -156,16 +172,17 @@ public class BaseClass {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
         try {
+            wait.until(ExpectedConditions.visibilityOf(element));
             wait.until(ExpectedConditions.elementToBeClickable(element));
 
             ((JavascriptExecutor) driver)
                     .executeScript("arguments[0].scrollIntoView({block:'center'});", element);
 
-            Thread.sleep(300);
+            Thread.sleep(200);
             element.click();
 
         } catch (ElementClickInterceptedException e) {
-            logger.warn("⚠️ Click intercepted – JS fallback");
+            logger.warn("⚠️ Click intercepted – using JS click");
             ((JavascriptExecutor) driver)
                     .executeScript("arguments[0].click();", element);
         } catch (Exception e) {
