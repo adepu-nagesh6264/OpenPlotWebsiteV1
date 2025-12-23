@@ -8,12 +8,13 @@
 
         <classes>
        <class name="testCases.TC01LoginTest"/>
-<!--            <class name="testCases.TC03PostPropertyTest"/>-->
-<!--            <class name="testCases.TC02LogoutTest"/>-->
-            <class name="testCases.TC05HomePageRentalPropertiesTest"/>
+              <class name="testCases.TC05HomePageRentalPropertiesTest"/>
+            <class name="testCases.TC03PostPropertyTest"/>
+            <class name="testCases.TC02LogoutTest"/>
 
         </classes>
     </test>
 
 </suite>
+
 
