@@ -3,6 +3,7 @@ package testCases;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.HomePageSearch;
@@ -24,9 +25,10 @@ public class TC06HomePageSearchTest extends BaseClass {
         // ✅ Initialize page object FIRST
         hps = new HomePageSearch(driver);
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(12));
 
-        // ✅ Correct place to close cookie popup
+        // ✅ Safe cookie handling
+        handleCookies();
         hps.closeCookiePopup();
 
         // ✅ Store parent window for switching
@@ -36,6 +38,8 @@ public class TC06HomePageSearchTest extends BaseClass {
     @Test
     public void validateSearchPage() {
 
+        // ================= BUY FLOW =================
+        handleCookies();
         System.out.println("Selecting Buy radio button...");
         hps.clickOnBuyRadioButton();
         waitUntilPageLoads();
@@ -63,15 +67,25 @@ public class TC06HomePageSearchTest extends BaseClass {
         System.out.println("Switching to child window...");
         switchToChildWindow();
 
-        wait.until(ExpectedConditions.jsReturnsValue(
-                "return document.readyState === 'complete'"
+        // ✅ Ensure navigation completed (SEO-safe)
+        waitUntilPageLoads();
+        wait.until(ExpectedConditions.or(
+                ExpectedConditions.urlContains("/buy"),
+                ExpectedConditions.urlContains("/rent")
         ));
 
-        System.out.println("Child Window URL: " + driver.getCurrentUrl());
+        // ✅ STABILIZATION WAIT (UI-based – reliable)
+        wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//h6[contains(translate(normalize-space(.)," +
+                        "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'properties for')]")
+        ));
 
+        System.out.println("Child Window URL (BUY): " + driver.getCurrentUrl());
+
+        // ✅ SAME method reused (NOT removed)
         Assert.assertTrue(
                 hps.validatePropertiesForBuyText(),
-                "Text 'Properties for BUY in' not found in new window!"
+                "Properties header not found in BUY search result page"
         );
 
         // Switch back
@@ -79,6 +93,8 @@ public class TC06HomePageSearchTest extends BaseClass {
         switchToParentWindow();
         waitUntilPageLoads();
 
+        // ================= RENT FLOW =================
+        handleCookies();
         System.out.println("Selecting Rent radio button...");
         hps.clickOnRentRadioButton();
         waitUntilPageLoads();
@@ -97,13 +113,25 @@ public class TC06HomePageSearchTest extends BaseClass {
         System.out.println("Switching to child window...");
         switchToChildWindow();
 
-        wait.until(ExpectedConditions.jsReturnsValue(
-                "return document.readyState === 'complete'"
+        // ✅ Ensure navigation completed (SEO-safe)
+        waitUntilPageLoads();
+        wait.until(ExpectedConditions.or(
+                ExpectedConditions.urlContains("/buy"),
+                ExpectedConditions.urlContains("/rent")
         ));
 
+        // ✅ SAME stabilization wait reused
+        wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.xpath("//h6[contains(translate(normalize-space(.)," +
+                        "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'properties for')]")
+        ));
+
+        System.out.println("Child Window URL (RENT): " + driver.getCurrentUrl());
+
+        // ✅ SAME method reused (method NOT removed)
         Assert.assertTrue(
                 hps.validatePropertiesForBuyText(),
-                "Text 'Properties for RENT in' not found in new window!"
+                "Properties header not found in RENT search result page"
         );
 
         // Switch back

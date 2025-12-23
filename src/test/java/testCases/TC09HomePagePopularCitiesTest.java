@@ -17,7 +17,7 @@ import java.util.Set;
 public class TC09HomePagePopularCitiesTest extends BaseClass {
     @Test
     public void verifyClickEachPopularCityCard() throws Exception {
-
+        handleCookies();
         HomePagePopularCities cities = new HomePagePopularCities(driver);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 

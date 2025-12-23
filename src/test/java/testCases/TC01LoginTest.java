@@ -23,12 +23,8 @@ public class TC01LoginTest extends BaseClass {
         String pwd = p.getProperty("password");
 
         // FIX 1: Handle Cookie Popup safely (works for Jenkins headless)
-        try {
-            wait.until(ExpectedConditions.elementToBeClickable(hp.cookiesBtn));
-            hp.clickOnCookiesBtn();
-        } catch (Exception e) {
-            System.out.println("Cookies popup not displayed → continue");
-        }
+        handleCookies();
+
 
         // FIX 2: Click Login button using wait
         wait.until(ExpectedConditions.elementToBeClickable(hp.loginBtn));

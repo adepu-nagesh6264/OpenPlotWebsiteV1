@@ -22,52 +22,55 @@ public class BaseClass {
 
     public static WebDriver driver;
     public static Properties p;
-    public Logger logger;
+    public static Logger logger;
     public String parentWindowID;
 
     @BeforeSuite
     public void setup() throws Exception {
 
-        // Load config
+        // ================= Load config =================
         FileReader file = new FileReader("./src/test/resources/config.properties");
         p = new Properties();
         p.load(file);
 
-        logger = LogManager.getLogger(this.getClass());
+        logger = LogManager.getLogger(BaseClass.class);
 
-        boolean isJenkins = System.getenv("JENKINS_HOME") != null;
         boolean isHeadless = Boolean.parseBoolean(System.getProperty("HEADLESS", "false"));
 
         ChromeOptions options = new ChromeOptions();
 
+        // ================= Mandatory stability options =================
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-extensions");
         options.addArguments("--remote-allow-origins=*");
 
-        // 🔥 Fix for Windows taskbar / occlusion issues
+        // ================= STEP 1: CRITICAL VISIBILITY FIXES =================
         options.addArguments("--disable-features=CalculateNativeWinOcclusion");
+        options.addArguments("--disable-backgrounding-occluded-windows");
+        options.addArguments("--disable-renderer-backgrounding");
         options.addArguments("--force-device-scale-factor=1");
         options.addArguments("--window-position=0,0");
 
-        // ================= BROWSER MODE DECISION =================
+        // ================= Browser mode =================
         if (isHeadless) {
-            // 🤖 Explicit Headless Mode
-            System.out.println("🤖 Running in HEADLESS mode");
+            logger.info("🤖 Running in HEADLESS mode");
             options.addArguments("--headless=new");
             options.addArguments("--window-size=1920,1080");
             options.addArguments("--disable-gpu");
-
         } else {
-            // 🖥️ Visible Browser (LOCAL or JENKINS USER MODE)
-            System.out.println("🖥️ Running with VISIBLE browser");
+            logger.info("🖥️ Running with VISIBLE browser");
             options.addArguments("--start-maximized");
         }
 
         driver = new ChromeDriver(options);
 
-        // 🔥 Force consistent size (critical for Jenkins)
+        // ================= STEP 2: FORCE FOREGROUND WINDOW =================
+        driver.manage().window().setPosition(new Point(0, 0));
         driver.manage().window().setSize(new Dimension(1920, 1080));
+        driver.manage().window().maximize();
+
+        ((JavascriptExecutor) driver).executeScript("window.focus();");
 
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -96,9 +99,8 @@ public class BaseClass {
             File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(src, new File(destPath));
         } catch (Exception e) {
-            System.out.println("Screenshot error: " + e.getMessage());
+            logger.error("Screenshot error", e);
         }
-
         return destPath;
     }
 
@@ -119,12 +121,55 @@ public class BaseClass {
         driver.switchTo().window(parentWindowID);
     }
 
+    // ================= Cookie Handler =================
+
     public void handleCookies() {
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(6))
-                    .until(ExpectedConditions.elementToBeClickable(
-                            By.xpath("//div[contains(@class,'accept-cookies-btn') and normalize-space()='Accept All Cookies']")
-                    )).click();
-        } catch (Exception ignored) {}
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+
+            By cookieBtn = By.xpath(
+                    "//div[contains(@class,'accept-cookies-btn') or " +
+                            "contains(text(),'Accept') or contains(text(),'Agree')]"
+            );
+
+            WebElement acceptBtn =
+                    wait.until(ExpectedConditions.visibilityOfElementLocated(cookieBtn));
+
+            ((JavascriptExecutor) driver)
+                    .executeScript("arguments[0].scrollIntoView({block:'center'});", acceptBtn);
+
+            ((JavascriptExecutor) driver)
+                    .executeScript("arguments[0].click();", acceptBtn);
+
+            logger.info("✅ Cookies popup accepted");
+
+        } catch (TimeoutException e) {
+            logger.info("ℹ️ Cookies popup not displayed");
+        } catch (Exception e) {
+            logger.warn("⚠️ Cookies popup present but not clickable", e);
+        }
+    }
+
+    // ================= Safe Click =================
+
+    public void safeClick(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+
+            ((JavascriptExecutor) driver)
+                    .executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+
+            Thread.sleep(300);
+            element.click();
+
+        } catch (ElementClickInterceptedException e) {
+            logger.warn("⚠️ Click intercepted – JS fallback");
+            ((JavascriptExecutor) driver)
+                    .executeScript("arguments[0].click();", element);
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to click element safely", e);
+        }
     }
 }

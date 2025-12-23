@@ -14,6 +14,7 @@ public class TC04HomePageImagesTest extends BaseClass {
     public void validateHomePageImagesWithPopupHandling() {
 
         HomePage hp = new HomePage(driver);
+        handleCookies();
         List<WebElement> images = hp.getAllImages();
 
         System.out.println("Total Images Found: " + images.size());

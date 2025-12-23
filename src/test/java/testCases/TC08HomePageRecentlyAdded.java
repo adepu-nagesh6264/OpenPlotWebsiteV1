@@ -26,7 +26,7 @@ public class TC08HomePageRecentlyAdded extends BaseClass {
 
     @Test
     public void validateRecentlyAdded() throws InterruptedException {
-
+        handleCookies();
         // Get list of recently added cards
         List<WebElement> cards = hps.getRecentlyAddedCards();
 

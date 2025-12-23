@@ -24,6 +24,7 @@ public class TC07HomePageNewlyAddedProjectsTest extends BaseClass {
 
     @Test
     public void validateNewlyAddedProjects() throws InterruptedException {
+        handleCookies();
 
         System.out.println("Starting intelligent carousel navigation...");
 
