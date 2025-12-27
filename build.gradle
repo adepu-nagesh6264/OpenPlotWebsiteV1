@@ -24,7 +24,9 @@ dependencies {
 }
 
 test {
-    useTestNG()
+    useTestNG() {
+        suites 'src/test/resources/testng.xml'
+    }
     systemProperty "file.encoding", "UTF-8"
 }
 tasks.withType(JavaCompile).configureEach {
