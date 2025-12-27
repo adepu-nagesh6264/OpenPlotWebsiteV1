@@ -93,8 +93,9 @@ public class BaseClass {
     }
 
     @AfterSuite(alwaysRun = true)
-    public void tearDown() {
+    public void tearDown() throws InterruptedException {
         if (driver != null) {
+            Thread.sleep(5000);
             driver.quit();
             logger.info("🛑 Browser closed");
         }
@@ -189,4 +190,88 @@ public class BaseClass {
             throw new RuntimeException("Unable to click element safely", e);
         }
     }
+
+
+    //Close chat window
+    public void closeChatWidgetIfPresent() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+            // Switch to chat iframe
+            wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(
+                    By.xpath("//iframe[@title='chat widget' or contains(@src,'tawk')]")
+            ));
+
+            // Click close button
+            WebElement closeBtn = wait.until(
+                    ExpectedConditions.elementToBeClickable(
+                            By.xpath("//i[contains(@class,'tawk-icon-x')]")
+                    )
+            );
+
+            closeBtn.click();
+            logger.info("❌ Chat widget closed");
+
+            // Switch back to main page
+            driver.switchTo().defaultContent();
+
+        } catch (Exception e) {
+            driver.switchTo().defaultContent();
+            logger.info("ℹ️ Chat widget not present");
+        }
+    }
+
+    // Close welcome message
+    public void closeTawkChatIfPresent() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+            // 1️⃣ Switch to Tawk chat iframe
+            wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(
+                    By.xpath("//iframe[contains(@src,'tawk') or @title='chat widget']")
+            ));
+
+            // 2️⃣ Locate close (X) icon
+            WebElement closeIcon = wait.until(
+                    ExpectedConditions.elementToBeClickable(
+                            By.xpath("//i[contains(@class,'tawk-icon-x')]")
+                    )
+            );
+
+            // 3️⃣ Click using JS (most reliable)
+            ((JavascriptExecutor) driver)
+                    .executeScript("arguments[0].click();", closeIcon);
+
+            logger.info("❌ Tawk chat widget closed");
+
+            // 4️⃣ Switch back to main content
+            driver.switchTo().defaultContent();
+
+        } catch (Exception e) {
+            driver.switchTo().defaultContent();
+            logger.info("ℹ️ Tawk chat widget not present");
+        }
+    }
+
+    public void disableChatWidgetCompletely() {
+        try {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+
+            // Disable pointer events on all iframes
+            js.executeScript(
+                    "document.querySelectorAll('iframe').forEach(i => i.style.pointerEvents='none');"
+            );
+
+            // Specifically hide Tawk iframe if present
+            js.executeScript(
+                    "document.querySelectorAll('iframe[title=\"chat widget\"]').forEach(i => i.style.display='none');"
+            );
+
+            logger.info("🚫 Chat widget disabled successfully");
+        } catch (Exception e) {
+            logger.info("ℹ️ Chat widget not present");
+        }
+    }
+
 }
+

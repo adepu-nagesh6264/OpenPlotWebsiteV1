@@ -11,7 +11,7 @@ import testBase.BaseClass;
 import java.time.Duration;
 import java.util.List;
 
-public class TC08HomePageRecentlyAdded extends BaseClass {
+public class TC08HomePageRecentlyAddedTest extends BaseClass {
 
     HomePageSearch hps;
     WebDriverWait wait;

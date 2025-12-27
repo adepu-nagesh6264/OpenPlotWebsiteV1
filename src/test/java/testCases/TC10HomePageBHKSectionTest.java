@@ -13,9 +13,19 @@ public class TC10HomePageBHKSectionTest extends BaseClass {
 
     @BeforeClass
     public void init() {
+
+        // ✅ Initialize page objects FIRST
+        hps = new HomePageSearch(driver);
         bhk = new HomePageBHK(driver);
+
+        // ✅ Handle cookies safely
+        handleCookies();
         hps.closeCookiePopup();
+
+        // ✅ Store parent window if navigation happens
+        storeParentWindow();
     }
+
 
     @Test(priority = 1)
     public void scrollToBhkSection() {
@@ -72,7 +82,8 @@ public class TC10HomePageBHKSectionTest extends BaseClass {
             Thread.sleep(1000);
 
             bhk.scrollToBhkSection();
-            bhk.closeChatWidgetIfPresent();  // ensure popup not reappearing
+            bhk.closeChatWidgetIfPresent();
+            Thread.sleep(5000);// ensure popup not reappearing
         }
     }
 

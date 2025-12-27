@@ -1,101 +1,102 @@
-2025-12-23 16:04:33 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 16:04:43 INFO  BaseClass:54 - Login test executed successfully.
-2025-12-23 16:04:54 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 16:05:06 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 16:05:40 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 16:05:41 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
-2025-12-23 16:06:00 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 16:06:38 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 16:09:16 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 16:09:57 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 16:10:58 INFO  TC02LogoutTest:42 - User logged off successfully
-2025-12-23 16:19:51 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 16:19:59 INFO  BaseClass:54 - Login test executed successfully.
-2025-12-23 16:20:09 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 16:20:22 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 16:20:56 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 16:20:57 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
-2025-12-23 16:21:10 INFO  TC02LogoutTest:42 - User logged off successfully
-2025-12-23 17:26:38 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 17:26:44 INFO  BaseClass:54 - Login test executed successfully.
-2025-12-23 17:26:54 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:27:06 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:27:33 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:27:34 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
-2025-12-23 17:27:51 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:28:16 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:30:41 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:31:22 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:31:57 INFO  TC02LogoutTest:42 - User logged off successfully
-2025-12-23 17:36:34 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:37:09 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 17:37:19 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:37:51 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:38:11 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:38:52 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:39:33 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:40:53 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 17:40:59 INFO  BaseClass:54 - Login test executed successfully.
-2025-12-23 17:41:09 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:41:50 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:42:10 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:42:20 INFO  TC02LogoutTest:42 - User logged off successfully
-2025-12-23 17:43:06 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 17:43:52 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:44:03 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:44:12 WARN  TC03PostPropertyTest:68 - ⚠️ Ready To Move click intercepted – using safeClick fallback
-2025-12-23 17:44:29 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:44:30 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
-2025-12-23 17:44:48 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:45:10 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:47:42 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:48:22 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 17:49:04 INFO  TC02LogoutTest:42 - User logged off successfully
-2025-12-23 18:11:47 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 18:11:55 INFO  BaseClass:54 - Login test executed successfully.
-2025-12-23 18:12:05 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:12:17 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:12:47 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:12:48 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
-2025-12-23 18:13:06 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:13:38 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:16:16 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:16:56 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:17:46 INFO  TC02LogoutTest:42 - User logged off successfully
-2025-12-23 18:19:15 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 18:19:24 INFO  BaseClass:54 - Login test executed successfully.
-2025-12-23 18:19:34 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:19:46 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:20:18 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:20:19 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
-2025-12-23 18:20:36 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:21:17 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:21:40 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:21:54 INFO  TC02LogoutTest:42 - User logged off successfully
-2025-12-23 18:22:49 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 18:22:57 INFO  BaseClass:54 - Login test executed successfully.
-2025-12-23 18:23:07 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:23:48 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:24:11 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:24:25 INFO  TC02LogoutTest:42 - User logged off successfully
-2025-12-23 18:25:48 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 18:25:55 INFO  BaseClass:54 - Login test executed successfully.
-2025-12-23 18:26:05 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:28:54 INFO  TC02LogoutTest:42 - User logged off successfully
-2025-12-23 18:35:14 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 18:35:20 INFO  BaseClass:54 - Login test executed successfully.
-2025-12-23 18:35:30 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:37:24 INFO  TC02LogoutTest:42 - User logged off successfully
-2025-12-23 18:38:21 INFO  BaseClass:148 - ✅ Cookies popup accepted
-2025-12-23 18:38:25 INFO  BaseClass:54 - Login test executed successfully.
-2025-12-23 18:38:36 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:38:47 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:38:54 WARN  TC03PostPropertyTest:68 - ⚠️ Ready To Move click intercepted – using safeClick fallback
-2025-12-23 18:39:12 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:39:12 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
-2025-12-23 18:39:30 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:39:50 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:41:49 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:42:30 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:42:48 INFO  BaseClass:151 - ℹ️ Cookies popup not displayed – continuing test
-2025-12-23 18:42:57 INFO  TC02LogoutTest:42 - User logged off successfully
+2025-12-27 12:39:23 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 12:39:54 INFO  BaseClass:161 - ✅ Cookies popup accepted
+2025-12-27 12:39:58 INFO  BaseClass:54 - Login test executed successfully.
+2025-12-27 12:40:09 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 12:41:35 INFO  BaseClass:100 - 🛑 Browser closed
+2025-12-27 12:44:04 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 12:44:31 INFO  BaseClass:161 - ✅ Cookies popup accepted
+2025-12-27 12:44:35 INFO  BaseClass:54 - Login test executed successfully.
+2025-12-27 12:44:45 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 12:46:05 INFO  BaseClass:100 - 🛑 Browser closed
+2025-12-27 12:47:51 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 12:48:18 INFO  BaseClass:161 - ✅ Cookies popup accepted
+2025-12-27 12:48:23 INFO  BaseClass:54 - Login test executed successfully.
+2025-12-27 12:48:33 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 12:50:02 INFO  BaseClass:100 - 🛑 Browser closed
+2025-12-27 13:00:39 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 13:01:11 INFO  BaseClass:161 - ✅ Cookies popup accepted
+2025-12-27 13:01:18 INFO  BaseClass:54 - Login test executed successfully.
+2025-12-27 13:01:29 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 13:03:04 INFO  BaseClass:220 - ℹ️ Chat widget not present
+2025-12-27 13:03:15 INFO  BaseClass:100 - 🛑 Browser closed
+2025-12-27 13:11:46 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 13:12:48 INFO  BaseClass:161 - ✅ Cookies popup accepted
+2025-12-27 13:12:55 INFO  BaseClass:54 - Login test executed successfully.
+2025-12-27 13:13:07 INFO  BaseClass:220 - ℹ️ Chat widget not present
+2025-12-27 13:13:18 INFO  BaseClass:251 - ℹ️ Tawk chat widget not present
+2025-12-27 13:13:21 INFO  TC02LogoutTest:45 - User logged off successfully
+2025-12-27 13:13:32 INFO  BaseClass:100 - 🛑 Browser closed
+2025-12-27 13:15:45 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 13:16:13 INFO  BaseClass:161 - ✅ Cookies popup accepted
+2025-12-27 13:16:17 INFO  BaseClass:54 - Login test executed successfully.
+2025-12-27 13:16:27 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 13:18:00 INFO  BaseClass:220 - ℹ️ Chat widget not present
+2025-12-27 13:18:10 INFO  BaseClass:251 - ℹ️ Tawk chat widget not present
+2025-12-27 13:18:20 INFO  BaseClass:100 - 🛑 Browser closed
+2025-12-27 13:21:09 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 13:21:16 WARN  BaseClass:84 - Window focus not allowed by OS (expected on Windows services)
+2025-12-27 13:21:31 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 13:21:54 INFO  BaseClass:161 - ✅ Cookies popup accepted
+2025-12-27 13:21:57 INFO  BaseClass:54 - Login test executed successfully.
+2025-12-27 13:22:08 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 13:23:34 INFO  BaseClass:220 - ℹ️ Chat widget not present
+2025-12-27 13:23:45 INFO  BaseClass:251 - ℹ️ Tawk chat widget not present
+2025-12-27 13:23:52 INFO  BaseClass:100 - 🛑 Browser closed
+2025-12-27 16:29:17 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 16:29:46 INFO  BaseClass:161 - ✅ Cookies popup accepted
+2025-12-27 16:29:50 INFO  BaseClass:54 - Login test executed successfully.
+2025-12-27 16:30:00 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:31:32 INFO  BaseClass:220 - ℹ️ Chat widget not present
+2025-12-27 16:31:42 INFO  BaseClass:251 - ℹ️ Tawk chat widget not present
+2025-12-27 16:31:51 INFO  BaseClass:100 - 🛑 Browser closed
+2025-12-27 16:35:54 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 16:36:21 INFO  BaseClass:161 - ✅ Cookies popup accepted
+2025-12-27 16:36:26 INFO  BaseClass:54 - Login test executed successfully.
+2025-12-27 16:36:36 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:38:03 INFO  BaseClass:220 - ℹ️ Chat widget not present
+2025-12-27 16:38:14 INFO  BaseClass:251 - ℹ️ Tawk chat widget not present
+2025-12-27 16:38:14 INFO  BaseClass:269 - 🚫 Chat widget disabled successfully
+2025-12-27 16:38:16 INFO  TC02LogoutTest:46 - User logged off successfully
+2025-12-27 16:38:22 INFO  BaseClass:100 - 🛑 Browser closed
+2025-12-27 16:39:16 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 16:39:46 INFO  BaseClass:161 - ✅ Cookies popup accepted
+2025-12-27 16:39:50 INFO  BaseClass:54 - Login test executed successfully.
+2025-12-27 16:40:00 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:40:11 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:40:36 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:40:37 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
+2025-12-27 16:40:54 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:41:17 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:43:47 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:44:28 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:44:48 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:45:05 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:45:23 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:46:18 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:47:29 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:48:59 INFO  BaseClass:220 - ℹ️ Chat widget not present
+2025-12-27 16:49:09 INFO  BaseClass:251 - ℹ️ Tawk chat widget not present
+2025-12-27 16:49:09 INFO  BaseClass:269 - 🚫 Chat widget disabled successfully
+2025-12-27 16:49:12 INFO  TC02LogoutTest:46 - User logged off successfully
+2025-12-27 16:49:20 INFO  BaseClass:100 - 🛑 Browser closed
+2025-12-27 16:55:22 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2025-12-27 16:55:50 INFO  BaseClass:161 - ✅ Cookies popup accepted
+2025-12-27 16:55:54 INFO  BaseClass:54 - Login test executed successfully.
+2025-12-27 16:56:04 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:56:15 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:56:39 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:56:40 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
+2025-12-27 16:56:58 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:57:18 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 16:59:46 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 17:00:26 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 17:00:47 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 17:01:04 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 17:01:22 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 17:02:17 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 17:03:29 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2025-12-27 17:04:57 INFO  BaseClass:220 - ℹ️ Chat widget not present
+2025-12-27 17:05:07 INFO  BaseClass:252 - ℹ️ Tawk chat widget not present
+2025-12-27 17:05:07 INFO  BaseClass:270 - 🚫 Chat widget disabled successfully
+2025-12-27 17:05:10 INFO  TC02LogoutTest:46 - User logged off successfully
+2025-12-27 17:05:23 INFO  BaseClass:100 - 🛑 Browser closed
