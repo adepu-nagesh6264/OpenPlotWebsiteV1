@@ -50,34 +50,34 @@ public class TC03PostPropertyTest extends BaseClass {
         pp.clickButton("TotalFloors", "2");
         pp.clickButton("BedRooms", "2");
         pp.clickButton("BathRooms", "2");
-
-        pp.clickButton("FurnitureStatus", "Unfurnished");
-        pp.clickButton("FloorType", "Tiles");
-
+        pp.clickButton("Balconies", "2");
+        pp.selectYBtnOption( "Unfurnished");
+        pp.selectYBtnOption("Tiles");
         pp.clickAmenity("CCTV");
         pp.clickAmenity("Children Park");
         pp.clickAmenity("Security");
+        pp.selectYBtnOption( "Ready To Move");
+        pp.enterAge();
+        pp.selectYBtnOption("East");
+        pp.selectYBtnOption( "New");
 
-        // ================= READY TO MOVE (CRITICAL FIX) =================
-        try {
-            wait.until(ExpectedConditions.elementToBeClickable(
-                    By.xpath("//button[@type='button' and text()='Ready To Move']")
-            ));
-            pp.clickOnReadyToMove(); // existing method (kept)
-        } catch (ElementClickInterceptedException e) {
-            logger.warn("⚠️ Ready To Move click intercepted – using safeClick fallback");
-            safeClick(driver.findElement(
-                    By.xpath("//button[@type='button' and text()='Ready To Move']")
-            ));
-        }
+
+//        // ================= READY TO MOVE (CRITICAL FIX) =================
+//        try {
+//            wait.until(ExpectedConditions.elementToBeClickable(
+//                    By.xpath("//button[@type='button' and text()='Ready To Move']")
+//            ));
+//            pp.clickOnReadyToMove(); // existing method (kept)
+//        } catch (ElementClickInterceptedException e) {
+//            logger.warn("⚠️ Ready To Move click intercepted – using safeClick fallback");
+//            safeClick(driver.findElement(
+//                    By.xpath("//button[@type='button' and text()='Ready To Move']")
+//            ));
+//        }
 
         // =================================================================
 
-        pp.enterAge();
-        pp.clickButton("Facing", "East");
-        pp.clickButton("TransactionStatus", "New");
-
-        pp.enterRoadWidth();
+          pp.enterRoadWidth();
         pp.enterPrice();
         pp.enterBookingAmount();
         pp.enterRegNo();

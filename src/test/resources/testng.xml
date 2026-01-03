@@ -16,11 +16,14 @@
             <class name="testCases.TC08HomePageRecentlyAddedTest"/>
             <class name="testCases.TC09HomePagePopularCitiesTest"/>
             <class name="testCases.TC10HomePageBHKSectionTest"/>
-<!--            <class name="testCases.TC02LogoutTest"/>-->
+            <class name="testCases.TC11HomePageOpenPlotInMinutesBlogTest"/>
+            <class name="testCases.TC12HomePagePropertyByTypePerfectMatchTest"/>
+            <class name="testCases.TC02LogoutTest"/>
 
         </classes>
     </test>
 
 </suite>
+
 
 
