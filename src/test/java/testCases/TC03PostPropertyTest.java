@@ -108,6 +108,10 @@ public class TC03PostPropertyTest extends BaseClass {
         logger.info("Your Property Listed Successfully.");
 
         Thread.sleep(3000);
-        pp.clickOnBackToHomePageBtn();
+        //pp.clickOnBackToHomePageBtn();
+        pp.clickVisitYourProperty();
+        Thread.sleep(2000);
+        pp.clickOnHomeLogo();
+
     }
 }

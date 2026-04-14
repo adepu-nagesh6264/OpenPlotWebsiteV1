@@ -70,8 +70,8 @@ public class TC06HomePageSearchTest extends BaseClass {
         // ✅ Ensure navigation completed (SEO-safe)
         waitUntilPageLoads();
         wait.until(ExpectedConditions.or(
-                ExpectedConditions.urlContains("/buy"),
-                ExpectedConditions.urlContains("/rent")
+                ExpectedConditions.urlContains("/BUY"),
+                ExpectedConditions.urlContains("/RENT")
         ));
 
         // ✅ STABILIZATION WAIT (UI-based – reliable)
@@ -89,6 +89,11 @@ public class TC06HomePageSearchTest extends BaseClass {
         );
 
         // Switch back
+        // ✅ Close child window after validation
+        System.out.println("Closing child window (BUY)...");
+        driver.close();
+
+// ✅ Switch back to parent window
         System.out.println("Switching back to parent window...");
         switchToParentWindow();
         waitUntilPageLoads();
@@ -116,8 +121,8 @@ public class TC06HomePageSearchTest extends BaseClass {
         // ✅ Ensure navigation completed (SEO-safe)
         waitUntilPageLoads();
         wait.until(ExpectedConditions.or(
-                ExpectedConditions.urlContains("/buy"),
-                ExpectedConditions.urlContains("/rent")
+                ExpectedConditions.urlContains("/BUY"),
+                ExpectedConditions.urlContains("/RENT")
         ));
 
         // ✅ SAME stabilization wait reused
@@ -130,11 +135,15 @@ public class TC06HomePageSearchTest extends BaseClass {
 
         // ✅ SAME method reused (method NOT removed)
         Assert.assertTrue(
-                hps.validatePropertiesForBuyText(),
+                hps.validatePropertiesForRentText(),
                 "Properties header not found in RENT search result page"
         );
 
-        // Switch back
+        // ✅ Close child window after validation
+        System.out.println("Closing child window (RENT)...");
+        driver.close();
+
+// ✅ Switch back to parent window
         System.out.println("Switching back to parent window...");
         switchToParentWindow();
     }

@@ -67,6 +67,9 @@ public class PostPropertyPage extends BasePage {
     @FindBy(xpath="//button[normalize-space()='Skip Images']")
     WebElement SkipImagesBtn;
 
+    @FindBy(xpath ="//a[@class='navbar-brand']//img[@alt='logo']")
+    WebElement logo;
+
     // -------------------------
     // STABILIZED CLICK METHODS
     // -------------------------
@@ -225,6 +228,16 @@ public class PostPropertyPage extends BasePage {
     public void clickOnSkipImagesButton(){
         scrollToElement(SkipImagesBtn);
         jsClick(SkipImagesBtn);
+    }
+
+    @FindBy(xpath = "//div[contains(text(),'Visit your Property')]")
+    public WebElement VisitYourPropertyBtn;
+    public void  clickVisitYourProperty(){
+        VisitYourPropertyBtn.click();
+    }
+
+    public void clickOnHomeLogo(){
+        logo.click();
     }
 //Furniture Status
 By unfurnishedBtn = By.xpath("//button[normalize-space()='Unfurnished']");

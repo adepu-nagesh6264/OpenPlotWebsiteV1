@@ -1,23 +1,90 @@
-2026-01-22 13:31:12 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
-2026-01-22 13:31:41 INFO  BaseClass:161 - ✅ Cookies popup accepted
-2026-01-22 13:31:46 INFO  BaseClass:54 - Login test executed successfully.
-2026-01-22 13:31:57 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
-2026-01-22 13:32:07 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
-2026-01-22 13:32:11 INFO  BaseClass:299 - ✅ Selected option: Unfurnished
-2026-01-22 13:32:12 INFO  BaseClass:299 - ✅ Selected option: Tiles
-2026-01-22 13:32:13 INFO  BaseClass:299 - ✅ Selected option: Ready To Move
-2026-01-22 13:32:14 INFO  BaseClass:299 - ✅ Selected option: East
-2026-01-22 13:32:14 INFO  BaseClass:299 - ✅ Selected option: New
-2026-01-22 13:32:29 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
-2026-01-22 13:32:43 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
-2026-01-22 13:33:35 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
-2026-01-22 13:34:15 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
-2026-01-22 13:35:07 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
-2026-01-22 13:35:27 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
-2026-01-22 13:35:58 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
-2026-01-22 13:40:39 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
-2026-01-22 13:42:45 INFO  BaseClass:220 - ℹ️ Chat widget not present
-2026-01-22 13:42:55 INFO  BaseClass:252 - ℹ️ Tawk chat widget not present
-2026-01-22 13:42:55 INFO  BaseClass:270 - 🚫 Chat widget disabled successfully
-2026-01-22 13:42:57 INFO  TC02LogoutTest:46 - User logged off successfully
-2026-01-22 13:43:14 INFO  BaseClass:100 - 🛑 Browser closed
+2026-04-14 12:55:03 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2026-04-14 12:55:44 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 12:55:50 INFO  BaseClass:54 - Login test executed successfully.
+2026-04-14 12:56:16 INFO  BaseClass:100 - 🛑 Browser closed
+2026-04-14 13:29:48 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2026-04-14 13:30:19 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 13:30:24 INFO  BaseClass:54 - Login test executed successfully.
+2026-04-14 13:30:43 INFO  BaseClass:100 - 🛑 Browser closed
+2026-04-14 13:31:42 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2026-04-14 13:32:21 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 13:32:27 INFO  BaseClass:54 - Login test executed successfully.
+2026-04-14 13:32:49 INFO  BaseClass:100 - 🛑 Browser closed
+2026-04-14 14:00:39 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2026-04-14 14:01:18 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:01:22 INFO  BaseClass:54 - Login test executed successfully.
+2026-04-14 14:01:46 INFO  BaseClass:100 - 🛑 Browser closed
+2026-04-14 14:04:42 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2026-04-14 14:05:15 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:05:20 INFO  BaseClass:54 - Login test executed successfully.
+2026-04-14 14:05:44 INFO  BaseClass:100 - 🛑 Browser closed
+2026-04-14 14:10:24 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2026-04-14 14:11:11 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:11:16 INFO  BaseClass:54 - Login test executed successfully.
+2026-04-14 14:11:42 INFO  BaseClass:100 - 🛑 Browser closed
+2026-04-14 14:13:34 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2026-04-14 14:14:06 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:14:11 INFO  BaseClass:54 - Login test executed successfully.
+2026-04-14 14:14:40 INFO  BaseClass:100 - 🛑 Browser closed
+2026-04-14 14:15:18 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2026-04-14 14:15:52 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:15:55 INFO  BaseClass:54 - Login test executed successfully.
+2026-04-14 14:16:06 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:16:16 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:16:22 INFO  BaseClass:312 - ✅ Selected option: Unfurnished
+2026-04-14 14:16:22 INFO  BaseClass:312 - ✅ Selected option: Tiles
+2026-04-14 14:16:24 INFO  BaseClass:312 - ✅ Selected option: Ready To Move
+2026-04-14 14:16:25 INFO  BaseClass:312 - ✅ Selected option: East
+2026-04-14 14:16:26 INFO  BaseClass:312 - ✅ Selected option: New
+2026-04-14 14:16:46 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:16:47 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
+2026-04-14 14:17:18 INFO  BaseClass:100 - 🛑 Browser closed
+2026-04-14 14:25:10 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2026-04-14 14:25:45 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:25:49 INFO  BaseClass:54 - Login test executed successfully.
+2026-04-14 14:25:59 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:26:10 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:26:16 INFO  BaseClass:312 - ✅ Selected option: Unfurnished
+2026-04-14 14:26:17 INFO  BaseClass:312 - ✅ Selected option: Tiles
+2026-04-14 14:26:18 INFO  BaseClass:312 - ✅ Selected option: Ready To Move
+2026-04-14 14:26:20 INFO  BaseClass:312 - ✅ Selected option: East
+2026-04-14 14:26:20 INFO  BaseClass:312 - ✅ Selected option: New
+2026-04-14 14:26:38 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:26:39 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
+2026-04-14 14:26:55 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:27:18 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:29:53 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:30:33 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:31:14 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:31:32 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:31:50 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:33:00 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:34:34 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:36:30 INFO  BaseClass:220 - ℹ️ Chat widget not present
+2026-04-14 14:36:40 INFO  BaseClass:252 - ℹ️ Tawk chat widget not present
+2026-04-14 14:36:40 INFO  BaseClass:270 - 🚫 Chat widget disabled successfully
+2026-04-14 14:36:57 INFO  BaseClass:100 - 🛑 Browser closed
+2026-04-14 14:48:05 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2026-04-14 14:48:45 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:48:50 INFO  BaseClass:54 - Login test executed successfully.
+2026-04-14 14:49:00 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:49:11 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:49:15 INFO  BaseClass:312 - ✅ Selected option: Unfurnished
+2026-04-14 14:49:15 INFO  BaseClass:312 - ✅ Selected option: Tiles
+2026-04-14 14:49:16 INFO  BaseClass:312 - ✅ Selected option: Ready To Move
+2026-04-14 14:49:17 INFO  BaseClass:312 - ✅ Selected option: East
+2026-04-14 14:49:17 INFO  BaseClass:312 - ✅ Selected option: New
+2026-04-14 14:49:33 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:49:33 INFO  TC03PostPropertyTest:108 - Your Property Listed Successfully.
+2026-04-14 14:50:03 INFO  BaseClass:220 - ℹ️ Chat widget not present
+2026-04-14 14:50:13 INFO  BaseClass:252 - ℹ️ Tawk chat widget not present
+2026-04-14 14:50:13 INFO  BaseClass:270 - 🚫 Chat widget disabled successfully
+2026-04-14 14:50:23 INFO  BaseClass:100 - 🛑 Browser closed
+2026-04-14 14:53:28 INFO  BaseClass:65 - 🖥️ Running with VISIBLE browser
+2026-04-14 14:54:05 INFO  BaseClass:164 - ℹ️ Cookies popup not displayed
+2026-04-14 14:54:09 INFO  BaseClass:54 - Login test executed successfully.
+2026-04-14 14:54:20 INFO  BaseClass:220 - ℹ️ Chat widget not present
+2026-04-14 14:54:31 INFO  BaseClass:252 - ℹ️ Tawk chat widget not present
+2026-04-14 14:54:31 INFO  BaseClass:270 - 🚫 Chat widget disabled successfully
+2026-04-14 14:54:33 INFO  TC02LogoutTest:46 - User logged off successfully
+2026-04-14 14:54:41 INFO  BaseClass:100 - 🛑 Browser closed

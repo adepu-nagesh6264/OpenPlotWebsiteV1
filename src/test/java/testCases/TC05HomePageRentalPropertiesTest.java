@@ -33,7 +33,7 @@ public class TC05HomePageRentalPropertiesTest extends BaseClass {
         } catch (Exception e) {
             System.out.println("Cookies popup not displayed → continue");
         }
-
+Thread.sleep(3000);
         Assert.assertTrue(
                 rp.isRentalSectionDisplayed(),
                 "Rental Properties section is not displayed!"

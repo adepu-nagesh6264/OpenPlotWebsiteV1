@@ -26,7 +26,7 @@ public class HomePageRentalPropertiesPage extends BasePage {
     // WebElements
     // ===============================
 
-    @FindBy(xpath = "//section[contains(@class,'rent-prop')]")
+    @FindBy(xpath = "//h3[contains(@class,'text-center') and contains(.,'Rental Properties')]")
     private WebElement rentalSection;
 
     @FindBy(xpath = "//div[contains(@class,'carousel_item')]")

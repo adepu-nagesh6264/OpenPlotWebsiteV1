@@ -30,15 +30,12 @@ public class TC12HomePagePropertyByTypePerfectMatchTest extends BaseClass {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//section[contains(@class,'category-type')]")));
-pt.clickNext(driver);
-Thread.sleep(2000);
-pt.clickPrevious(driver);
+        pt.clickNext(driver);
         Thread.sleep(2000);
         pt.clickOnActiveCard();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         driver.navigate().back();
         Thread.sleep(6000);
-               // pt.clickNext(driver);
     }
 
 }

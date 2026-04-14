@@ -18,12 +18,13 @@
             <class name="testCases.TC10HomePageBHKSectionTest"/>
             <class name="testCases.TC11HomePageOpenPlotInMinutesBlogTest"/>
             <class name="testCases.TC12HomePagePropertyByTypePerfectMatchTest"/>
+            <class name="testCases.TC13DeletePropertyTest"/>
             <class name="testCases.TC02LogoutTest"/>
 
         </classes>
     </test>
-
 </suite>
+
 
 
 

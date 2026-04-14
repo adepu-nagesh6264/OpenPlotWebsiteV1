@@ -39,6 +39,7 @@ public class HomePage extends BasePage {
     @FindBy(id = "tawk-mpreview-close")
     WebElement welcomePopupClose;
 
+
     @FindBy(xpath = "//div[@class='tawk-text-regular-3']")
     WebElement welcomePopupText;
 

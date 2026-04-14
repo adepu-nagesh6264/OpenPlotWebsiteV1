@@ -24,6 +24,10 @@ public class LogoutPage extends BasePage {
     @FindBy(xpath = "//div[@class='logout-confirm']")
     public WebElement logoutConfirmButton;
 
+    // My Properites menu
+    @FindBy(xpath = "//h6[contains(@class,'off-head-new') and text()='My Properties']")
+    public WebElement MyPropertiesMenu;
+
     public void clickOnNavigationMenu() {
         navigationMenu.click();
     }
@@ -35,4 +39,10 @@ public class LogoutPage extends BasePage {
     public void clickOnConfirmLogoutAlert() {
         logoutConfirmButton.click();
     }
+
+    public void clickOnMyPropertiesMenu() {
+        MyPropertiesMenu.click();
+    }
+
+
 }
